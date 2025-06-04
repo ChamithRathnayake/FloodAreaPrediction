@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flood Area Prediction Using Machine Learning</title>
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
@@ -19,6 +19,12 @@
       color: #fff;
       padding: 20px 0;
       text-align: center;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav ul {
@@ -52,10 +58,47 @@
       margin-bottom: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      animation: fadeIn 0.6s ease-in-out both;
     }
 
     h2 {
       color: #005288;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    .highlight {
+      background-color: #e8f4f8;
+      padding: 20px;
+      border-left: 6px solid #005288;
+      margin: 20px 0;
+      border-radius: 6px;
+    }
+
+    .button {
+      background-color: #005288;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0073aa;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 13px;
+      background-color: #0073aa;
+      color: white;
+      border-radius: 12px;
     }
 
     footer {
@@ -68,6 +111,22 @@
     img {
       border-radius: 8px;
       margin-top: 15px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      section {
+        padding: 20px 10px;
+      }
     }
   </style>
 </head>
@@ -90,11 +149,13 @@
   <section id="home">
     <h2>Welcome</h2>
     <p>Floods are the most frequent and devastating disasters in Sri Lanka, with the Gampaha District particularly vulnerable due to monsoonal rainfall and urban expansion. This project develops an ML-based system to enhance early warning and preparedness in the Attanagalu Oya basin.</p>
+    <!-- Suggestion: Add hero image of flood-prone areas or a Sri Lanka map -->
   </section>
 
   <section id="about">
     <h2>About the Project</h2>
     <p>Attanagalu Oya Basin spans 727 km² and frequently floods due to high rainfall and inadequate drainage. This project aims to model flood-prone zones using historical data from 2016 onward, sourced from the Irrigation Department, DMC, and Meteorology Department. Our goal is to develop an accurate and responsive ML-based system to help authorities anticipate risks and minimize impacts.</p>
+    <!-- Suggestion: Add image showing rainfall distribution or river system layout -->
   </section>
 
   <section id="methodology">
@@ -107,18 +168,24 @@
       <li>Engineering features including distance from river and risk categorization</li>
       <li>Aligning flood events with corresponding hydrological measurements</li>
     </ul>
-    <p>We trained three machine learning models — SVM, Random Forest, and XGBoost — to classify each GN division as flood-prone (1) or not (0). These models were evaluated using standard classification metrics to identify the most accurate one for deployment.</p>
+    <p>We trained three machine learning models — <span class="badge">SVM</span>, <span class="badge">Random Forest</span>, and <span class="badge">XGBoost</span> — to classify each GN division as flood-prone (1) or not (0). These models were evaluated using standard classification metrics to identify the most accurate one for deployment.</p>
+    <!-- Suggestion: Add a flowchart of ML model training process -->
   </section>
 
   <section id="results">
     <h2>Results</h2>
-    <p>Initial testing shows that Random Forest and XGBoost provide higher accuracy than SVM. Model performance was evaluated using confusion matrix, precision, recall, F1-score, and ROC curves. Once testing is complete, the most accurate model will be selected for integration into a real-time flood early warning system.</p>
+    <div class="highlight">
+      <p>Initial testing shows that <strong>Random Forest</strong> and <strong>XGBoost</strong> provided the highest accuracy in model evaluation.</p>
+    </div>
+    <p>Model performance was evaluated using confusion matrix, precision, recall, F1-score, and ROC curves. Once testing is complete, the most accurate model will be selected for integration into a real-time flood early warning system.</p>
     <img src="images/flood_map.png" alt="Flood Risk Map" width="100%">
+    <!-- Suggestion: Add charts showing model comparisons or confusion matrix visual -->
   </section>
 
   <section id="discussion">
     <h2>Discussion</h2>
     <p>ML models like Random Forest and XGBoost outperform traditional static models in capturing flood risk due to their ability to learn from non-linear and multi-variable relationships. The inclusion of spatial features (distance to river) and hydrological data enhances prediction precision. Future plans involve integration of sensor networks and real-time alerts.</p>
+    <!-- Suggestion: Add satellite image or schematic showing sensor placements -->
   </section>
 
   <section id="team">
@@ -128,6 +195,7 @@
       <li><strong>R. D. M. L. Weerasinghe</strong> – ICT20957 – ML Model Development</li>
       <li><strong>G. G. D. K. Jayathilaka</strong> – ICT20859 – Website Design & Deployment</li>
     </ul>
+    <!-- Suggestion: Add team photo or icons representing roles -->
   </section>
 
   <section id="contact">
