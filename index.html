@@ -151,6 +151,52 @@
       section {
         padding: 20px 10px;
       }
+
+    .team-grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .team-member {
+      flex: 1 1 30%;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      min-width: 250px;
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .team-member h4 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      color: #005288;
+    }
+
+    .team-member p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .team-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
     }
   </style>
 </head>
@@ -268,29 +314,109 @@
 
   <section id="results">
     <h2>Results</h2>
+
     <div class="highlight">
-      <p>Initial testing shows that <strong>Random Forest</strong> and <strong>XGBoost</strong> provided the highest accuracy in model evaluation.</p>
+      <p>Initial testing revealed that <strong>Random Forest</strong> and <strong>XGBoost</strong> outperformed Support Vector Machine (SVM) in overall predictive performance. After thorough evaluation, <strong>XGBoost</strong> was selected as the final model for deployment due to its superior accuracy and balanced performance across all metrics.</p>
     </div>
-    <p>Model performance was evaluated using confusion matrix, precision, recall, F1-score, and ROC curves. Once testing is complete, the most accurate model will be selected for integration into a real-time flood early warning system.</p>
-    <img src="images/flood_map.png" alt="Flood Risk Map" width="100%">
-    <!-- Suggestion: Add charts showing model comparisons or confusion matrix visual -->
+
+    <p>
+      Model evaluation was conducted using multiple classification metrics including Accuracy, Precision, Recall, and F1 Score. Additionally, confusion matrices were generated to visualize the classification results and identify the distribution of true vs. predicted values for both flood and non-flood scenarios.
+    </p>
+
+    <!-- Bar Chart -->
+    <h4>Model Performance Comparison</h4>
+    <img src="/img/Bar Chart.png" alt="Model Performance Comparison" style="max-width:100%; border-radius:8px; margin:20px 0;">
+
+    <!-- Confusion Matrices -->
+    <h4>Confusion Matrices for Each Model</h4>
+
+    <p><strong>Random Forest:</strong></p>
+    <img src="/img/confusion heat map.png" alt="Random Forest Confusion Matrix" style="max-width:100%; border-radius:8px; margin:15px 0;">
+
+    <p><strong>XGBoost:</strong></p>
+    <img src="/img/XGBoost confusion matrix.png" alt="XGBoost Confusion Matrix" style="max-width:100%; border-radius:8px; margin:15px 0;">
+
+    <p><strong>Support Vector Machine (SVM):</strong></p>
+    <img src="/img/SVM confusion matrix.png" alt="SVM Confusion Matrix" style="max-width:100%; border-radius:8px; margin:15px 0;">
+
+    <!-- Flood Risk Map -->
+    <h4>Flood Risk Map (Predicted)</h4>
+    <img src="images/flood_map.png" alt="Flood Risk Map" style="max-width:100%; border-radius:8px; margin-top:20px;">
+
+    <p>
+      Based on evaluation, <strong>XGBoost</strong> demonstrated the best balance between minimizing false positives (predicting flood where there was none) and maximizing true positives (correctly identifying actual flood events). Its higher precision and recall made it the ideal choice for integration into a real-time flood early warning system for the Gampaha District.
+    </p>
   </section>
+
 
   <section id="discussion">
     <h2>Discussion</h2>
-    <p>ML models like Random Forest and XGBoost outperform traditional static models in capturing flood risk due to their ability to learn from non-linear and multi-variable relationships. The inclusion of spatial features (distance to river) and hydrological data enhances prediction precision. Future plans involve integration of sensor networks and real-time alerts.</p>
-    <!-- Suggestion: Add satellite image or schematic showing sensor placements -->
+
+    <p>
+      The application of machine learning models for flood prediction in the Attanagalu Oya basin demonstrates the potential for data-driven technologies to support disaster preparedness and risk reduction. Among the models tested, <strong>XGBoost</strong> consistently outperformed others in terms of classification accuracy, precision, and recall, ultimately making it the most suitable model for real-world implementation.
+    </p>
+
+    <p>
+      One of the key advantages of XGBoost lies in its ability to handle imbalanced datasets and uncover non-linear patterns in multi-dimensional data. This is particularly important in flood forecasting, where flood events are less frequent than non-flood days, and environmental conditions vary significantly across locations and seasons.
+    </p>
+
+    <p>
+      Additionally, incorporating spatial features such as the GN division's proximity to the river (distance to Attanagalu Oya) enabled the model to account for geographical vulnerabilities. This approach marks an improvement over traditional rainfall-threshold-based warnings, which often ignore localized topographic and hydrologic characteristics.
+    </p>
+
+    <p>
+      Despite these successes, several limitations were observed. Some flood records were incomplete or inconsistently recorded across different departments. Moreover, the current model relies on historical data and does not yet integrate real-time sensor data or satellite imagery, which could further improve prediction speed and accuracy.
+    </p>
+
+    <p>
+      Future enhancements could include:
+      <ul>
+        <li>Integrating live rainfall, river gauge, and IoT-based flood sensors for real-time inference</li>
+        <li>Improving GN-level geolocation accuracy using GIS-based datasets</li>
+        <li>Using ensemble or hybrid models for further accuracy improvements</li>
+        <li>Deploying the model as a web API or embedding it into early warning dashboards</li>
+      </ul>
+    </p>
+
+    <p>
+      Ultimately, the system has the potential to assist local authorities, first responders, and community stakeholders by providing early flood alerts at GN-level granularity. This supports faster evacuations, better resource planning, and improved resilience in flood-prone communities.
+    </p>
+
+    <img src="images/GN_sensor_map.png" alt="GN Division Sensor Layout" style="max-width:100%; border-radius:8px; margin-top:20px;">
   </section>
+
 
   <section id="team">
     <h2>Team</h2>
-    <ul>
-      <li><strong>R. R. C. M. Rathnayake</strong> – ICT20916 – Data Collection & Preprocessing</li>
-      <li><strong>R. D. M. L. Weerasinghe</strong> – ICT20957 – ML Model Development</li>
-      <li><strong>G. G. D. K. Jayathilaka</strong> – ICT20859 – Website Design & Deployment</li>
-    </ul>
-    <!-- Suggestion: Add team photo or icons representing roles -->
+    <div class="team-grid">
+
+      <div class="team-member">
+        <img src="images/member1.jpg" alt="R. R. C. M. Rathnayake">
+        <h4>R. R. C. M. Rathnayake</h4>
+        <p>ICT20916</p>
+        <p>rathnayake@example.com</p>
+        <p>+94 77 123 4567</p>
+      </div>
+
+      <div class="team-member">
+        <img src="images/member2.jpg" alt="R. D. M. L. Weerasinghe">
+        <h4>R. D. M. L. Weerasinghe</h4>
+        <p>ICT20957</p>
+        <p>weerasinghe@example.com</p>
+        <p>+94 77 234 5678</p>
+      </div>
+
+      <div class="team-member">
+        <img src="images/member3.jpg" alt="G. G. D. K. Jayathilaka">
+        <h4>G. G. D. K. Jayathilaka</h4>
+        <p>ICT20859</p>
+        <p>jayathilaka@example.com</p>
+        <p>+94 77 345 6789</p>
+      </div>
+
+    </div>
   </section>
+
 
   <section id="contact">
     <h2>Contact</h2>
