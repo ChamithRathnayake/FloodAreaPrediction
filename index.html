@@ -69,6 +69,30 @@
       font-size: 26px;
     }
 
+    .flex-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .text-box {
+      flex: 1 1 50%;
+    }
+
+    .image-box {
+      flex: 1 1 45%;
+      text-wrap: 30;
+    }
+
+    @media (max-width: 768px) {
+      .flex-container {
+        flex-direction: column;
+      }
+    }
+
+
     .highlight {
       background-color: #e8f4f8;
       padding: 20px;
@@ -147,10 +171,20 @@
   </header>
 
   <section id="home">
-    <h2>Welcome</h2>
-    <p>Floods are the most frequent and devastating disasters in Sri Lanka, with the Gampaha District particularly vulnerable due to monsoonal rainfall and urban expansion. This project develops an ML-based system to enhance early warning and preparedness in the Attanagalu Oya basin.</p>
-    <!-- Suggestion: Add hero image of flood-prone areas or a Sri Lanka map -->
+  <h2>Welcome</h2>
+  <div class="flex-container">
+    <div class="text-box">
+      <p>Floods are among the most frequent and destructive natural disasters in Sri Lanka, affecting thousands of lives and causing severe economic and infrastructural damage annually. The Gampaha District, situated in the wet zone of the country, is particularly vulnerable due to its dense population, rapid urbanization, and exposure to both the southwest and northeast monsoons. One of the most flood-prone areas within this district is the Attanagalu Oya river basin, which frequently overflows during intense rainfall, inundating low-lying Grama Niladhari (GN) divisions.
+
+      <br/>In response to these recurring threats, this research project aims to develop a machine learning (ML)-based flood area prediction model that leverages local environmental and hydrological data. By integrating features such as river water levels, rainfall intensity, and the distance of GN divisions from the river, the model classifies areas as either flood-prone or not. The system is designed not only to enhance the accuracy and timeliness of early flood warnings but also to support better disaster preparedness, resource allocation, and community resilience planning.</p>
+    </div>
+    <div class="image-box">
+      <img src="/img/img1.png" alt="Flood-prone area illustration" width="100%">
+    </div>
+  </div>
   </section>
+
+
 
   <section id="about">
     <h2>About the Project</h2>
