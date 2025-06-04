@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flood Area Prediction Using Machine Learning</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #005288;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      background-color: #00406c;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 40px 20px;
+      margin: auto;
+      max-width: 1000px;
+      background-color: white;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #005288;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #002f4b;
+      color: white;
+    }
+
+    img {
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Flood Area Prediction - Gampaha GN Divisions</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#discussion">Discussion</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>This project uses machine learning to predict flood-prone areas within GN divisions in the Gampaha district of Sri Lanka.</p>
+  </section>
+
+  <section id="about">
+    <h2>About the Project</h2>
+    <p>Flooding is a recurring issue in Sri Lanka, especially in the Gampaha district. This study applies ML models like SVM, Random Forest, and XGBoost to historical data since 2016 for accurate flood area prediction. The goal is to assist decision-makers and emergency response teams with timely insights.</p>
+  </section>
+
+  <section id="methodology">
+    <h2>Methodology</h2>
+    <p>We collected data from Sri Lanka’s Irrigation Department, Disaster Management Centre, and the Department of Meteorology. Key features used in the model are:</p>
+    <ul>
+      <li><strong>Distance</strong> from Attanagalu Oya</li>
+      <li><strong>Water level</strong> readings of Attanagalu Oya</li>
+      <li><strong>Rainfall</strong> data</li>
+    </ul>
+    <p>Preprocessing was performed using Python and Pandas. We trained and evaluated three models (SVM, Random Forest, XGBoost) with the goal of predicting a binary outcome: <strong>1 (Flood)</strong> or <strong>0 (No Flood)</strong>.</p>
+  </section>
+
+  <section id="results">
+    <h2>Results</h2>
+    <p>Each model was evaluated for accuracy, precision, and recall. The model with the highest accuracy will be selected for final deployment. Visualizations include:</p>
+    <ul>
+      <li>Confusion Matrix</li>
+      <li>ROC Curve</li>
+      <li>Flood risk maps based on predictions</li>
+    </ul>
+    <img src="images/flood_map.png" alt="Flood Risk Map" width="100%">
+  </section>
+
+  <section id="discussion">
+    <h2>Discussion</h2>
+    <p>Our study demonstrates that ML models, especially tree-based algorithms like XGBoost and Random Forest, perform well in predicting flood risks. The primary challenges included data gaps and the need for real-time integration. Future improvements will include sensor-based inputs and integration with alert systems.</p>
+  </section>
+
+  <section id="team">
+    <h2>Team</h2>
+    <ul>
+      <li>Member 1 – Data Collection & Preprocessing</li>
+      <li>Member 2 – ML Model Development</li>
+      <li>Member 3 – Website Design & Deployment</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>For inquiries, contact us at <a href="mailto:floodprediction.group@gmail.com">floodprediction.group@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Flood Prediction Research Group</p>
+  </footer>
+</body>
+</html>
