@@ -89,47 +89,44 @@
 
   <section id="home">
     <h2>Welcome</h2>
-    <p>This project uses machine learning to predict flood-prone areas within GN divisions in the Gampaha district of Sri Lanka.</p>
+    <p>Floods are the most frequent and devastating disasters in Sri Lanka, with the Gampaha District particularly vulnerable due to monsoonal rainfall and urban expansion. This project develops an ML-based system to enhance early warning and preparedness in the Attanagalu Oya basin.</p>
   </section>
 
   <section id="about">
     <h2>About the Project</h2>
-    <p>Flooding is a recurring issue in Sri Lanka, especially in the Gampaha district. This study applies ML models like SVM, Random Forest, and XGBoost to historical data since 2016 for accurate flood area prediction. The goal is to assist decision-makers and emergency response teams with timely insights.</p>
+    <p>Attanagalu Oya Basin spans 727 km² and frequently floods due to high rainfall and inadequate drainage. This project aims to model flood-prone zones using historical data from 2016 onward, sourced from the Irrigation Department, DMC, and Meteorology Department. Our goal is to develop an accurate and responsive ML-based system to help authorities anticipate risks and minimize impacts.</p>
   </section>
 
   <section id="methodology">
     <h2>Methodology</h2>
-    <p>We collected data from Sri Lanka’s Irrigation Department, Disaster Management Centre, and the Department of Meteorology. Key features used in the model are:</p>
+    <p>The data preparation involved the following stages:</p>
     <ul>
-      <li><strong>Distance</strong> from Attanagalu Oya</li>
-      <li><strong>Water level</strong> readings of Attanagalu Oya</li>
-      <li><strong>Rainfall</strong> data</li>
+      <li>Collection of water level, rainfall, and flood event records from 2016 to present</li>
+      <li>Digitizing paper records and standardizing timestamps</li>
+      <li>Cleaning and merging datasets using Python (pandas)</li>
+      <li>Engineering features including distance from river and risk categorization</li>
+      <li>Aligning flood events with corresponding hydrological measurements</li>
     </ul>
-    <p>Preprocessing was performed using Python and Pandas. We trained and evaluated three models (SVM, Random Forest, XGBoost) with the goal of predicting a binary outcome: <strong>1 (Flood)</strong> or <strong>0 (No Flood)</strong>.</p>
+    <p>We trained three machine learning models — SVM, Random Forest, and XGBoost — to classify each GN division as flood-prone (1) or not (0). These models were evaluated using standard classification metrics to identify the most accurate one for deployment.</p>
   </section>
 
   <section id="results">
     <h2>Results</h2>
-    <p>Each model was evaluated for accuracy, precision, and recall. The model with the highest accuracy will be selected for final deployment. Visualizations include:</p>
-    <ul>
-      <li>Confusion Matrix</li>
-      <li>ROC Curve</li>
-      <li>Flood risk maps based on predictions</li>
-    </ul>
+    <p>Initial testing shows that Random Forest and XGBoost provide higher accuracy than SVM. Model performance was evaluated using confusion matrix, precision, recall, F1-score, and ROC curves. Once testing is complete, the most accurate model will be selected for integration into a real-time flood early warning system.</p>
     <img src="images/flood_map.png" alt="Flood Risk Map" width="100%">
   </section>
 
   <section id="discussion">
     <h2>Discussion</h2>
-    <p>Our study demonstrates that ML models, especially tree-based algorithms like XGBoost and Random Forest, perform well in predicting flood risks. The primary challenges included data gaps and the need for real-time integration. Future improvements will include sensor-based inputs and integration with alert systems.</p>
+    <p>ML models like Random Forest and XGBoost outperform traditional static models in capturing flood risk due to their ability to learn from non-linear and multi-variable relationships. The inclusion of spatial features (distance to river) and hydrological data enhances prediction precision. Future plans involve integration of sensor networks and real-time alerts.</p>
   </section>
 
   <section id="team">
     <h2>Team</h2>
     <ul>
-      <li>Member 1 – Data Collection & Preprocessing</li>
-      <li>Member 2 – ML Model Development</li>
-      <li>Member 3 – Website Design & Deployment</li>
+      <li><strong>R. R. C. M. Rathnayake</strong> – ICT20916 – Data Collection & Preprocessing</li>
+      <li><strong>R. D. M. L. Weerasinghe</strong> – ICT20957 – ML Model Development</li>
+      <li><strong>G. G. D. K. Jayathilaka</strong> – ICT20859 – Website Design & Deployment</li>
     </ul>
   </section>
 
