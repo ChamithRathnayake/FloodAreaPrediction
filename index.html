@@ -188,23 +188,83 @@
 
   <section id="about">
     <h2>About the Project</h2>
-    <p>Attanagalu Oya Basin spans 727 km² and frequently floods due to high rainfall and inadequate drainage. This project aims to model flood-prone zones using historical data from 2016 onward, sourced from the Irrigation Department, DMC, and Meteorology Department. Our goal is to develop an accurate and responsive ML-based system to help authorities anticipate risks and minimize impacts.</p>
-    <!-- Suggestion: Add image showing rainfall distribution or river system layout -->
+    <p>
+      The Attanagalu Oya Basin, located in the Gampaha District of Sri Lanka, spans approximately 727 km² and is highly susceptible to seasonal flooding due to both monsoonal rainfall and inadequate drainage infrastructure. This area has historically faced severe disruptions in residential areas, transportation routes, and agricultural zones.
+    </p>
+    <p>
+      Our project focuses on developing a flood prediction model using supervised machine learning techniques. We utilized environmental and hydrological data from 2016 onward, collected from official sources including the Sri Lanka Irrigation Department, Disaster Management Centre (DMC), and the Department of Meteorology. The core predictive features include rainfall levels, river water levels, and the geographical distance of each GN division from the river.
+    </p>
+    <p>
+      The model is trained and tested using data from <strong>102 Grama Niladhari (GN) divisions</strong> across the basin. These divisions were manually digitized, cleaned, and used as location references in our analysis to enable precise, zone-level flood risk classification.
+    </p>
+    <a href="/downloads/Updated_GN_Divisions_Gampaha.csv" class="button" download>Click Here to Download GN Division List</a>
+    <img src="/img/Gampaha_DSD.jpg" alt="Map of Gampaha District" style="max-width:100%; height:auto; border-radius:8px; margin-top:15px;">
   </section>
+
 
   <section id="methodology">
     <h2>Methodology</h2>
-    <p>The data preparation involved the following stages:</p>
-    <ul>
-      <li>Collection of water level, rainfall, and flood event records from 2016 to present</li>
-      <li>Digitizing paper records and standardizing timestamps</li>
-      <li>Cleaning and merging datasets using Python (pandas)</li>
-      <li>Engineering features including distance from river and risk categorization</li>
-      <li>Aligning flood events with corresponding hydrological measurements</li>
-    </ul>
-    <p>We trained three machine learning models — <span class="badge">SVM</span>, <span class="badge">Random Forest</span>, and <span class="badge">XGBoost</span> — to classify each GN division as flood-prone (1) or not (0). These models were evaluated using standard classification metrics to identify the most accurate one for deployment.</p>
-    <!-- Suggestion: Add a flowchart of ML model training process -->
+    <p>
+      This research follows a structured, data-driven methodology to develop and evaluate a machine learning-based flood prediction model for the Gampaha District. The approach can be summarized into the following key phases:
+    </p>
+
+    <h3>1. Data Collection</h3>
+    <p>
+      Historical data spanning from 2016 to 2024 was collected from multiple government institutions:
+      <ul>
+        <li><strong>Irrigation Department:</strong> River water level readings from key gauging stations on the Attanagalu Oya (e.g., Dunamale).</li>
+        <li><strong>Meteorology Department:</strong> Daily rainfall records in the Gampaha District.</li>
+        <li><strong>Disaster Management Centre (DMC):</strong> Past flood incident logs at the GN division level.</li>
+      </ul>
+    </p>
+
+    <h3>2. Data Digitization & Preprocessing</h3>
+    <p>
+      Most historical flood records were in paper format and required manual transcription. Once digitized, the data was cleaned using Python's <code>pandas</code> library:
+      <ul>
+        <li>Standardized timestamps (e.g., converting all date formats to YYYY-MM-DD).</li>
+        <li>Removed inconsistencies in GN division names and merged duplicate entries.</li>
+        <li>Interpolated or forward-filled missing water level and rainfall values where appropriate.</li>
+      </ul>
+    </p>
+
+    <h3>3. Feature Engineering</h3>
+    <p>
+      The final dataset contained records for 102 GN divisions with the following features:
+      <ul>
+        <li><strong>Rainfall (mm):</strong> Total daily rainfall recorded in the basin.</li>
+        <li><strong>Water Level (m):</strong> River water level from the Dunamale gauge station.</li>
+        <li><strong>Distance to River (km):</strong> Approximate linear distance from each GN division to Attanagalu Oya, categorized into risk zones (High, Medium, Low).</li>
+      </ul>
+      Each record was labeled with a binary output:
+      <strong>1</strong> for flood occurrence and <strong>0</strong> for no flood.
+    </p>
+
+    <h3>4. Model Development</h3>
+    <p>
+      Three supervised machine learning models were trained and evaluated:
+      <ul>
+        <li><span class="badge">Support Vector Machine (SVM)</span></li>
+        <li><span class="badge">Random Forest (RF)</span></li>
+        <li><span class="badge">XGBoost (Gradient Boosting)</span></li>
+      </ul>
+      The models were trained using an 80/20 train-test split and validated using cross-validation techniques.
+    </p>
+
+    <h3>5. Evaluation</h3>
+    <p>
+      Each model was assessed using standard classification metrics:
+      <ul>
+        <li>Accuracy</li>
+        <li>Precision</li>
+        <li>Recall</li>
+        <li>F1-Score</li>
+        <li>ROC-AUC Curve</li>
+      </ul>
+      The model with the best trade-off between precision and recall will be selected for future deployment in a real-time early warning system.
+    </p>
   </section>
+
 
   <section id="results">
     <h2>Results</h2>
