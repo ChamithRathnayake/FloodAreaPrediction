@@ -21,10 +21,44 @@
       text-align: center;
     }
 
+    h1 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    #uni-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e9f1f7;
+      padding: 10px 20px;
+      gap: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    #uni-banner img {
+      height: 60px;
+      width: auto;
+    }
+
+    .uni-text h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #002f4b;
+      font-weight: 600;
+    }
+
+    .uni-text p {
+      margin: 2px 0 0;
+      font-size: 14px;
+      color: #444;
+    }
+
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
+      background-color: #00406c;
     }
 
     nav ul {
@@ -32,12 +66,12 @@
       padding: 0;
       display: flex;
       justify-content: center;
-      background-color: #00406c;
       margin: 0;
     }
 
     nav ul li {
       margin: 0 15px;
+      padding: 10px;
     }
 
     nav ul li a {
@@ -50,6 +84,25 @@
       text-decoration: underline;
     }
 
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #005288;
+      color: white;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #scrollTopBtn:hover {
+      background-color: #0073aa;
+    }
+
     section {
       padding: 40px 20px;
       margin: auto;
@@ -59,7 +112,17 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       animation: fadeIn 0.6s ease-in-out both;
+      transition: background-color 0.3s ease;
     }
+
+    section:hover {
+      background-color: #f9f9f9;
+    }
+    
+    #home {
+      margin-top: 20px; 
+    }
+
 
     h2 {
       color: #005288;
@@ -125,33 +188,6 @@
       border-radius: 12px;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #002f4b;
-      color: white;
-    }
-
-    img {
-      border-radius: 8px;
-      margin-top: 15px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      section {
-        padding: 20px 10px;
-      }
-
     .team-grid {
       display: flex;
       flex-direction: row;
@@ -161,8 +197,15 @@
       margin-top: 30px;
     }
 
+    .supervisor-block {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+
     .team-member {
-      flex: 1 1 30%;
+      flex: 1 1 25%;
       background-color: #f9f9f9;
       border-radius: 8px;
       padding: 15px;
@@ -197,12 +240,47 @@
       }
     }
 
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #002f4b;
+      color: white;
+    }
+
+    img {
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      section {
+        padding: 20px 10px;
+      }
+
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Flood Area Prediction - Gampaha GN Divisions</h1>
+    <h1>Prediction Model for Flood-Affected Areas in River Basins: A Case Study of the Attanagalu Oya River Basin, Sri Lanka.</h1>
+    <div id="uni-banner">
+      <img src="/img/usjp-logo.png" alt="University Logo">
+      <div class="uni-text">
+        <h3>University of Sri Jayewardenepura</h3>
+        <p>Faculty of Technology | Research by BICT Honours Students</p>
+      </div>
+    </div>
+
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -388,34 +466,46 @@
 
   <section id="team">
     <h2>Team</h2>
-    <div class="team-grid">
 
+    <!-- Supervisor block centered on top -->
+    <div class="supervisor-block">
       <div class="team-member">
-        <img src="images/member1.jpg" alt="R. R. C. M. Rathnayake">
+        <img src="/img/ChamilaSir.jpg" alt="Dr. A. R. Nihmiya">
+        <h4>Mr. Chamila Karunatilake</h4>
+        <p>Academic Supervisor</p>
+        <p>itchamila@gmail.com</p>
+        <p>+94 76 460 8026</p>
+      </div>
+    </div>
+
+    <!-- 3 Members row -->
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="/img/chamithimg.jpg" alt="R. R. C. M. Rathnayake">
         <h4>R. R. C. M. Rathnayake</h4>
         <p>ICT20916</p>
-        <p>rathnayake@example.com</p>
-        <p>+94 77 123 4567</p>
+        <p>chamithmithsara@gmail.com</p>
+        <p>+94 71 104 33325</p>
       </div>
 
       <div class="team-member">
-        <img src="images/member2.jpg" alt="R. D. M. L. Weerasinghe">
+        <img src="/img/madu.jpg" alt="R. D. M. L. Weerasinghe">
         <h4>R. D. M. L. Weerasinghe</h4>
         <p>ICT20957</p>
-        <p>weerasinghe@example.com</p>
-        <p>+94 77 234 5678</p>
+        <p>ml.lakshaniweerasinghe@gmail.com</p>
+        <p>+94 71 362 1617</p>
       </div>
 
       <div class="team-member">
-        <img src="images/member3.jpg" alt="G. G. D. K. Jayathilaka">
+        <img src="/img/kavindya.jpg" alt="G. G. D. K. Jayathilaka">
         <h4>G. G. D. K. Jayathilaka</h4>
         <p>ICT20859</p>
-        <p>jayathilaka@example.com</p>
-        <p>+94 77 345 6789</p>
+        <p>kavindyajayathilake@gmail.com</p>
+        <p>+94 71 142 6725</p>
       </div>
-
     </div>
   </section>
+
 
 
   <section id="contact">
@@ -423,8 +513,32 @@
     <p>For inquiries, contact us at <a href="mailto:floodprediction.group@gmail.com">floodprediction.group@gmail.com</a></p>
   </section>
 
+  <!-- Scroll to top button -->
+  <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">↑</button>
+
+
   <footer>
     <p>&copy; 2025 Flood Prediction Research Group</p>
   </footer>
 </body>
+<script>
+  const btn = document.getElementById("scrollTopBtn");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  function topFunction() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+
 </html>
