@@ -132,6 +132,14 @@
       font-size: 26px;
     }
 
+     img {
+    transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
     .flex-container {
       display: flex;
       gap: 20px;
@@ -154,6 +162,8 @@
         flex-direction: column;
       }
     }
+
+
 
 
     .highlight {
@@ -370,6 +380,7 @@
         <li><span class="badge">Support Vector Machine (SVM)</span></li>
         <li><span class="badge">Random Forest (RF)</span></li>
         <li><span class="badge">XGBoost (Gradient Boosting)</span></li>
+        <li><span class="badge">ANN (Artificial Neural Network)</span></li>
       </ul>
       The models were trained using an 80/20 train-test split and validated using cross-validation techniques.
     </p>
@@ -404,25 +415,46 @@
     <h4>Model Performance Comparison</h4>
     <img src="images/Bar Chart.png" alt="Model Performance Comparison" style="max-width:100%; border-radius:8px; margin:20px 0;">
 
+    <!-- ROC Curve -->
+    <h4>ROC Curve Comparison</h4>
+    <img src="images/ROC curve.jpg" alt="Model Performance Comparison" style="max-width:100%; border-radius:8px; margin:20px 0;">
+
     <!-- Confusion Matrices -->
     <h4>Confusion Matrices for Each Model</h4>
 
-    <p><strong>Random Forest:</strong></p>
-    <img src="images/confusion heat map.png" alt="Random Forest Confusion Matrix" style="max-width:100%; border-radius:8px; margin:15px 0;">
+    <!-- Random Forest - image on right, title on left -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+      <p style="flex: 1; text-align: center;"><strong>Random Forest (RF)</strong></p>
+      <img src="images/confusion heat map.png" alt="Random Forest Confusion Matrix" style="flex: 1; max-width: 45%; border-radius:8px; border: 3px solid black;">
+    </div>
 
-    <p><strong>XGBoost:</strong></p>
-    <img src="images/XGBoost confusion matrix.png" alt="XGBoost Confusion Matrix" style="max-width:100%; border-radius:8px; margin:15px 0;">
+    <!-- XGBoost - image on left, title on right -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+      <img src="images/XGBoost confusion matrix.png" alt="XGBoost Confusion Matrix" style="flex: 1; max-width: 45%; border-radius:8px; border: 3px solid black;">
+      <p style="flex: 1; text-align: center;"><strong>XGBoost(Gradient Boosting)</strong></p>
+    </div>
 
-    <p><strong>Support Vector Machine (SVM):</strong></p>
-    <img src="images/SVM confusion matrix.png" alt="SVM Confusion Matrix" style="max-width:100%; border-radius:8px; margin:15px 0;">
+    <!-- SVM - image on right, title on left -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+      <p style="flex: 1; text-align: center;"><strong>Support Vector Machine (SVM)</strong></p>
+      <img src="images/SVM confusion matrix.png" alt="SVM Confusion Matrix" style="flex: 1; max-width: 45%; border-radius:8px; border: 3px solid black;">
+    </div>
 
-    <!-- Flood Risk Map -->
+    <!-- Flood Risk Map
     <h4>Flood Risk Map (Predicted)</h4>
     <img src="images/flood_map.png" alt="Flood Risk Map" style="max-width:100%; border-radius:8px; margin-top:20px;">
 
     <p>
       Based on evaluation, <strong>XGBoost</strong> demonstrated the best balance between minimizing false positives (predicting flood where there was none) and maximizing true positives (correctly identifying actual flood events). Its higher precision and recall made it the ideal choice for integration into a real-time flood early warning system for the Gampaha District.
-    </p>
+    </p> -->
+    <p>In additionally also tested using <strong>Artificial Neural Network (ANN):</strong></p>
+    <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 15px;">
+      <img src="images/ANN Confu.jpg" alt="ANN Confusion Matrix" style="flex: 1 1 30%; max-width: 48%; border-radius: 8px;">
+      <img src="images/ANN Roc.jpg" alt="ANN ROC Curve" style="flex: 1 1 30%; max-width: 45%; border-radius: 8px;">
+    </div>
+    <!-- <img src="images/ANN test.jpg" alt="ANN Test Accuracy" style="max-width:100%; border-radius: 8px;"> -->
+
+    
   </section>
 
 
@@ -459,7 +491,7 @@
       Ultimately, the system has the potential to assist local authorities, first responders, and community stakeholders by providing early flood alerts at GN-level granularity. This supports faster evacuations, better resource planning, and improved resilience in flood-prone communities.
     </p>
 
-    <img src="images/GN_sensor_map.png" alt="GN Division Sensor Layout" style="max-width:100%; border-radius:8px; margin-top:20px;">
+    <!-- <img src="images/GN_sensor_map.png" alt="GN Division Sensor Layout" style="max-width:100%; border-radius:8px; margin-top:20px;"> -->
   </section>
 
 
@@ -503,13 +535,6 @@
         <p>+94 71 142 6725</p>
       </div>
     </div>
-  </section>
-
-
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>For inquiries, contact us at <a href="mailto:floodprediction.group@gmail.com">floodprediction.group@gmail.com</a></p>
   </section>
 
   <!-- Scroll to top button -->
